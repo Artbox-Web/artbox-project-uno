@@ -96,6 +96,12 @@ export default function Home() {
 </div>
 </div>
 </section>
+
+<section className="team">
+<h4>Passionate minds, dedicated hearts</h4>
+<p>Meet the amazing team working hard to put these services together. Therapists, developers, designers, and community builders, each member brings their unique talents and empathy to create a personalized experience just for you.</p>
+
+</section>
       </main>
     </StyledHome>
   );
@@ -171,6 +177,11 @@ main{
 
   h3{
   font-size: 36px;
+  font-weight: 500;
+}
+
+h4{
+  font-size: 32px;
   font-weight: 500;
 }
 
@@ -277,6 +288,18 @@ align-items: start;
         gap: 48px;
       }
     }
+  }
+
+  .team{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 85%;
+    align-items: center;
+    text-align: center;
+
+
+
   }
 }
 `
