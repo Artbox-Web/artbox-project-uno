@@ -13,6 +13,17 @@ const GlobalStyles = createGlobalStyle`
     box-sizing:border-box;
 }
 
+//to hide scroll
+
+:root::-webkit-scrollbar{
+  display: none;
+}
+
+:root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 body{
     background: ${bgColor};
     color: ${pryColor};
@@ -22,6 +33,7 @@ body{
     font-family: ${roboto.style.fontFamily};
     font-weight: 400;
     cursor:default ;
+    
 }
 
 a{
