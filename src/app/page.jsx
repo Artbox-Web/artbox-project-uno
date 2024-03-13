@@ -4,14 +4,17 @@
 //motion and styled
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { bgColor, pryColor, txtColor,accentColor } from "./library/colors";
+import { bgColor, pryColor, txtColor,accentColor, pryLightColor } from "./library/colors";
 
 import headerImage from './library/images/header-image.png'
-import TxtDropdown from "./comps/dropdown-text";
+import footerImage from './library/images/footer-image.png'
+
+import TxtDropdown from "./components/dropdown-text";
+import TeamMembers from "./components/team-members";
 
 import Image from "next/image";
 
-import Nav from "./comps/nav";
+import Nav from "./components/nav";
 
 export default function Home() {
   return (
@@ -100,9 +103,30 @@ export default function Home() {
 <section className="team">
 <h4>Passionate minds, dedicated hearts</h4>
 <p>Meet the amazing team working hard to put these services together. Therapists, developers, designers, and community builders, each member brings their unique talents and empathy to create a personalized experience just for you.</p>
-
+<TeamMembers/>
 </section>
+
       </main>
+      <footer>
+      <div className="footerImg">
+<Image src={footerImage} alt="autotherapy logo" 
+ width={0}
+ height={0}
+ sizes="100vw"
+ style={{ width: '100%', height: '100%'}}/>
+</div>
+
+<div className="footer-content">
+<div className="subscribe-part">
+<h1>Join us. <br/> 
+<span>Be part of something bigger.</span></h1>
+
+<div className="form-side">
+
+</div>
+</div>
+</div>
+      </footer>
     </StyledHome>
   );
 }
@@ -110,9 +134,11 @@ export default function Home() {
 const StyledHome = styled(motion.div)`
 width: 100%;
 height: auto;
-padding: 10px;
+padding-top: 10px;
+padding-bottom: 0;
 display: flex;
 flex-direction: column;
+gap: 175px;
 align-items: center;
 
 
@@ -300,6 +326,57 @@ align-items: start;
 
 
 
+  }
+}
+
+footer{
+  height: 668px;
+  width: 100%;
+  background-color: ${pryLightColor};
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .footerImg{
+    height: 120%;
+position: absolute;
+left: 36px;
+z-index: 1;
+top: 50%;
+  transform: translateY(-50%);
+  }
+
+  .footer-content{
+    width: 95%;
+    height: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+
+    .subscribe-part{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-side{
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+    }
+
+    h1{
+font-size: 48px;
+color: ${pryColor};
+font-weight: 700;
+
+span{
+  color: #fff;
+}
+    }
   }
 }
 `

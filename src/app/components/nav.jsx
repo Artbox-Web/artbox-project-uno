@@ -40,5 +40,9 @@ text-transform: uppercase;
         display: flex;
         gap: 38px;
         font-size: 20px;
+
+        li{
+          cursor: pointer;
+        }
     }
   `
