@@ -12,9 +12,12 @@ import footerImage from './library/images/footer-image.png'
 import TxtDropdown from "./components/dropdown-text";
 import TeamMembers from "./components/team-members";
 
+import { MdOutlineArrowForward} from "react-icons/md";
+
 import Image from "next/image";
 
 import Nav from "./components/nav";
+import { bebas_neue } from "./library/fonts";
 
 export default function Home() {
   return (
@@ -60,12 +63,12 @@ export default function Home() {
  width={0}
  height={0}
  sizes="100vw"
- style={{ width: 'auto', height: '100%' }} />
+ style={{ width: '100%', height: 'auto' }} />
 </div>
 
 <div className="col">
 <h3>Think therapy sessions on pause? Think again.</h3>
-<p>While we're busy refining our core services, the Auto Therapy journey continues. Dive into our bi-weekly newsletter, brimming with personal stories, mental health insights, and practical tips. Get your daily dose of positivity on social media, where we share community stories and exciting sneak peeks of what's brewing.</p>
+<p>While we're busy refining our core services, the AutoTherapy journey continues. Dive into our bi-weekly newsletter, brimming with personal stories, mental health insights, and practical tips. Get your daily dose of positivity on social media, where we share community stories and exciting sneak peeks of what's brewing.</p>
 <button>Subscribe to our Newsletter</button>
 </div>
 </section>
@@ -122,8 +125,27 @@ export default function Home() {
 <span>Be part of something bigger.</span></h1>
 
 <div className="form-side">
+<p>Be the first to know! Insider tips, inspiring stories, and exclusive updates on Auto Therapy - straight to your inbox. Subscribe now and join the well-being journey.</p>
+<h2>Subscribe to our newsletter</h2>
 
+<div className="sub-input">
+ <input type="email" name="email" id="email" placeholder="Email"/>
+ <button>
+  <MdOutlineArrowForward className="icon"/>
+ </button>
 </div>
+</div>
+</div>
+
+<div className="alt-nav">
+<h4>AutoTherapy</h4>
+
+<ul>
+  <li>About</li>
+  <li>Features</li>
+  <li>Meet the Team</li>
+  <li>Contact Us</li>
+</ul>
 </div>
 </div>
       </footer>
@@ -184,6 +206,7 @@ header{
 
     .headerImg{
       width: 590px;
+  
     }
   }
 
@@ -246,6 +269,8 @@ p{
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .row{
@@ -270,6 +295,7 @@ align-items: start;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 8px;
     }
     
     .col{
@@ -305,6 +331,8 @@ align-items: start;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 8px;
+  overflow: hidden;
       }
 
       .read-content{
@@ -351,7 +379,6 @@ top: 50%;
   .footer-content{
     width: 95%;
     height: 80%;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -366,6 +393,7 @@ top: 50%;
       display: flex;
       flex-direction: column;
       width: 40%;
+      gap: 40px;
     }
 
     h1{
@@ -376,6 +404,74 @@ font-weight: 700;
 span{
   color: #fff;
 }
+    }
+
+    h2{
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    p{
+      font-size: 24px;
+      color: ${accentColor};
+    }
+
+    .sub-input{
+      width: 100%;
+      height: 80px;
+      background-color: #fff;
+      padding-left:13px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid ${pryColor};
+
+      input{
+        width: 85%;
+        height: 100%;
+        border: none;
+        font-size: 24px;
+        color: ${pryColor};
+      }
+
+      button{
+        width: 15%;
+        height: 100%;
+        border-radius: 0;
+        background:none;
+
+        .icon{
+          font-size: 36px;
+          color: ${pryColor};
+          margin: auto;
+        }
+      }
+    }
+
+
+    .alt-nav{
+      display: flex;
+      gap: 83px;
+      height: fit-content;
+      align-items: center;
+
+      h4{
+        text-transform: uppercase;
+        font-size: 48px;
+        font-weight: 400;
+        font-family: ${bebas_neue.style.fontFamily};
+      }
+
+      ul{
+        display: flex;
+        color: #fff;
+        gap: 38px;
+
+        li{
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
     }
   }
 }

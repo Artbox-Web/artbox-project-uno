@@ -31,7 +31,7 @@ export default function Nav() {
     
 
     span{
-font-family: ${bebas_neue} !important;
+font-family: ${bebas_neue.style.fontFamily} !important;
 font-size: 32px;
 text-transform: uppercase;
     }
