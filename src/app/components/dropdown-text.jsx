@@ -1,84 +1,78 @@
-'use client'
+'use client';
 
-import { motion } from "framer-motion";
-import styled from "styled-components";
-import { accentColor, bgColor, pryColor } from "../library/colors";
-import { MdArrowDropDown } from "react-icons/md";
-import { useState } from "react";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { accentColor, bgColor, pryColor } from '../library/colors';
+import { MdArrowDropDown } from 'react-icons/md';
+import { useState } from 'react';
 
+export default function TxtDropdown({ title, text }) {
+	const [isHidden, setIsHidden] = useState(false);
 
-  
+	const toggleHidden = () => {
+		setIsHidden(!isHidden);
+	};
 
-export default function TxtDropdown({title, text}) {
-const [isHidden, setIsHidden] = useState(false)
+	return (
+		<StyledTxtDropdown>
+			<div className='content' onClick={() => toggleHidden()}>
+				<h5>{title}</h5>
+				<MdArrowDropDown className={isHidden ? 'icon rotate-180' : 'icon rotate-zero'} id='arrow' />
+			</div>
+			<div className={isHidden ? 'shown-content' : 'hidden-content'} dangerouslySetInnerHTML={{ __html: text }}></div>
+		</StyledTxtDropdown>
+	);
+}
 
-const toggleHidden= () => {
-    setIsHidden(!isHidden)
-  };
+const StyledTxtDropdown = styled(motion.div)`
+	width: 100%;
+	height: fit-content;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+	border-radius: 12px;
 
+	.content {
+		width: 100%;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 18px;
+		cursor: pointer;
 
-    return (
-      <StyledTxtDropdown>
-<div className="content" onClick={()=>toggleHidden()}>
-<h5>{title}</h5>
-<MdArrowDropDown className={isHidden? "icon rotate-180" : "icon rotate-zero"} id="arrow"/>
-</div>
-<div  className={isHidden? "shown-content" : "hidden-content"} dangerouslySetInnerHTML={{ __html: text }}>
-</div>
-      </StyledTxtDropdown>
-    );
-  }
+		h5 {
+			font-size: 24px;
+			font-weight: 500;
+		}
 
-  const StyledTxtDropdown = styled(motion.div)`
-    width: 100%;
-    height: fit-content;
-    background-color: white;
-    box-shadow: 0 0  10px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    
+		.icon {
+			font-size: 36px;
+		}
 
-    .content{
-        width: 100%;
-    height: 80px; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 18px;
-    cursor: pointer;
-    
-    h5{
-        font-size: 24px;
-        font-weight: 500;
-    }
+		.rotate-180 {
+			transform: rotate(180deg);
+			transition: all.2s ease-in;
+		}
 
-    .icon{
-        font-size: 36px;
-    }
+		.rotate-zero {
+			transform: rotate(0deg);
+			transition: all.2s ease-in;
+		}
+	}
 
-    .rotate-180{
-        transform: rotate(180deg);
-        transition: all.2s ease-in;
-    }
+	.hidden-content {
+		padding: 0 18px;
+		padding-bottom: 20px;
+		display: none;
+		transition: 0.2s ease-in;
+		color: ${accentColor};
+	}
 
-    .rotate-zero{
-        transform: rotate(0deg);
-        transition: all.2s ease-in;
-    }
-    }
-
-    .hidden-content{
-        padding: 0 18px;
-        padding-bottom: 20px;
-        display: none;
-        transition: .2s ease-in;
-        color:${accentColor};
-    }
-
-    .shown-content{
-        padding: 0 18px;
-        padding-bottom: 20px;
-        display: block;
-        transition: .2s ease-in;
-        color:${accentColor};
-    }
-  `
+	.shown-content {
+		padding: 0 18px;
+		padding-bottom: 20px;
+		display: block;
+		transition: 0.2s ease-in;
+		color: ${accentColor};
+	}
+`;
