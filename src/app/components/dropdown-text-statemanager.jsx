@@ -47,22 +47,6 @@ export default function TxtDropdownStateManager() {
 
     return (
     <>
-     {/* <TxtDropdown
-  title={'Matching Made Personal'}
-  text={'In-depth Questionnaire: Delve into your unique needs and goals through our comprehensive questionnaire. We factor in age, career, relationships, even cultural background to create a profile that truly reflects you.<br/><br/>Curated Therapist Matches: Based on your profile, we handpick 3 qualified therapists specializing in your specific needs. Explore their profiles, backgrounds, and areas of expertise to find the perfect fit.'}
-  isHiddenState={isHidden1}
-  />
-  <TxtDropdown
-  title={"Measuring Progress, Together"}
-  text={'Weekly Check-Ins: Track your progress with our easy-to-use weekly questionnaires. Reflect on your experiences, celebrate achievements, and identify areas for growth.<br/><br/>Shared Dashboard: Both you and your therapist stay informed with a shared dashboard. Access key metrics, visualize progress, and stay aligned on your journey.'}
-  isHiddenState={isHidden2}
-  />
-  <TxtDropdown
-  title={"Building Community, Beyond Therapy"}
-  text={"Connect with Peers: Join our vibrant community platform where you can share experiences, offer support, and find inspiration from others on similar paths.<br/><br/>Open Forum: Engage in discussions, ask questions, and learn from the collective wisdom of the community."}
-  isHiddenState={isHidden3}
-
-  /> */}
 
 <StyledTxtDropdown onClick={()=>isHiddenToggler(1)}>
 <div className="content" >
