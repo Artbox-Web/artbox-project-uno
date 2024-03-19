@@ -9,7 +9,6 @@ import { bgColor, pryColor, txtColor,accentColor, pryLightColor } from "./librar
 import headerImage from './library/images/header-image.png'
 import footerImage from './library/images/footer-image.png'
 
-import TxtDropdown from "./components/dropdown-text";
 import TeamMembers from "./components/team-members";
 
 import { MdOutlineArrowForward} from "react-icons/md";
