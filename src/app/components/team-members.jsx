@@ -11,16 +11,38 @@ import data_TeamMembers from "./data";
 export default function TeamMembers() {
 
     const [isHovered1, setIsHovered1] = useState(false)
-    const [isHovered2, setIsHovered2] = useState(false)
+    const [isHovered2, setIsHovered2] = useState(true)
     const [isHovered3, setIsHovered3] = useState(false)
 
-
+const hoverSetter = (x) =>{
+    switch (x) {
+        case 1:
+          setIsHovered1(true)
+          setIsHovered2(false)
+          setIsHovered3(false)
+          break;
+        case 2:
+          setIsHovered1(false)
+          setIsHovered2(true)
+          setIsHovered3(false)
+          break;
+         case 3:
+            setIsHovered1(false)
+            setIsHovered2(false)
+            setIsHovered3(true)
+            break;
+        default:
+            setIsHovered1(false)
+            setIsHovered2(false)
+            setIsHovered3(true)
+      }
+}
 
 
     return(
         <StyledTeam>
 <div className="team-row">
-<div className={isHovered1?"member member-onHover":"member"} onClick={()=>setIsHovered1(!isHovered1)} >
+<div className={isHovered1?"member member-onHover":"member"} onClick={()=>hoverSetter(1)} >
     <div className="profile-img"></div>
     <div className="col">
         <span className="title">Gaius Ogbe</span>
@@ -28,7 +50,7 @@ export default function TeamMembers() {
     </div>
 </div>
 
-<div className={isHovered2?"member member-onHover":"member"} onClick={()=>setIsHovered2(!isHovered2)} >
+<div className={isHovered2?"member member-onHover":"member"} onClick={()=>hoverSetter(2)} >
     <div className="profile-img"></div>
     <div className="col">
         <span className="title">Johnny Daliang</span>
@@ -36,7 +58,7 @@ export default function TeamMembers() {
     </div>
 </div>
 
-<div className={isHovered3?"member member-onHover":"member"} onClick={()=>setIsHovered3(!isHovered3)} >
+<div className={isHovered3?"member member-onHover":"member"} onClick={()=>hoverSetter(3)} >
     <div className="profile-img"></div>
     <div className="col">
         <span className="title">Bukunmi Isijola</span>

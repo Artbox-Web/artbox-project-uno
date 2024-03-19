@@ -9,21 +9,17 @@ import { useState } from "react";
 
   
 
-export default function TxtDropdown({title, text}) {
-const [isHidden, setIsHidden] = useState(false)
+export default function TxtDropdown({title, text, isHiddenState}) {
 
-const toggleHidden= () => {
-    setIsHidden(!isHidden)
-  };
-
+    const [detState, setDetState] = useState(isHiddenState)
 
     return (
-      <StyledTxtDropdown>
-<div className="content" onClick={()=>toggleHidden()}>
+      <StyledTxtDropdown  onClick={()=>setDetState(!detState)}>
+<div className="content" >
 <h5>{title}</h5>
-<MdArrowDropDown className={isHidden? "icon rotate-180" : "icon rotate-zero"} id="arrow"/>
+<MdArrowDropDown className={detState? "icon rotate-180" : "icon rotate-zero"} id="arrow"/>
 </div>
-<div  className={isHidden? "shown-content" : "hidden-content"} dangerouslySetInnerHTML={{ __html: text }}>
+<div  className={detState? "shown-content" : "hidden-content"} dangerouslySetInnerHTML={{ __html: text }}>
 </div>
       </StyledTxtDropdown>
     );

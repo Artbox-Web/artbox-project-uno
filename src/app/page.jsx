@@ -18,6 +18,7 @@ import Image from "next/image";
 
 import Nav from "./components/nav";
 import { bebas_neue } from "./library/fonts";
+import TxtDropdownStateManager from "./components/dropdown-text-statemanager";
 
 export default function Home() {
   return (
@@ -89,16 +90,7 @@ export default function Home() {
 
 <div className="read-content">
   <p>Learn more about the upcoming features Autotherapy has for you, from personalized matching to a supportive community, it’s stacked just for you!</p>
-  <TxtDropdown
-  
-  title={'Matching Made Personal'}
-  text={'In-depth Questionnaire: Delve into your unique needs and goals through our comprehensive questionnaire. We factor in age, career, relationships, even cultural background to create a profile that truly reflects you.<br/><br/>Curated Therapist Matches: Based on your profile, we handpick 3 qualified therapists specializing in your specific needs. Explore their profiles, backgrounds, and areas of expertise to find the perfect fit.'}/>
-  <TxtDropdown
-  title={"Measuring Progress, Together"}
-  text={'Weekly Check-Ins: Track your progress with our easy-to-use weekly questionnaires. Reflect on your experiences, celebrate achievements, and identify areas for growth.<br/><br/>Shared Dashboard: Both you and your therapist stay informed with a shared dashboard. Access key metrics, visualize progress, and stay aligned on your journey.'}/>
-  <TxtDropdown
-  title={"Building Community, Beyond Therapy"}
-  text={"Connect with Peers: Join our vibrant community platform where you can share experiences, offer support, and find inspiration from others on similar paths.<br/><br/>Open Forum: Engage in discussions, ask questions, and learn from the collective wisdom of the community."}/>
+ <TxtDropdownStateManager/>
 </div>
 </div>
 </section>
